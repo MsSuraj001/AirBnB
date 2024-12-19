@@ -9,9 +9,9 @@ const Schema = new mongoose.Schema({
         type: String,
         set : (v)=> v === "" ? "https://www.britannica.com/science/forest" : v,
     },
-    user: String
+    // user: String
 })
 
 const ListingSchema = mongoose.model("ListingSchema", Schema);
 
-modules.exports = ListingSchema;
+module.exports = ListingSchema;
