@@ -12,7 +12,7 @@ main().then( () =>{
 })
 
 async function main(){
-    mongoose.connect("mongodb+srv://Ms_Suraj:<mssuraj007>@cluster0.f9hqf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"); // here some problem
+    mongoose.connect("mongodb+srv://Ms_Suraj:mssuraj007@cluster0.quhr9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"); // here some problem
 }
 
 // this is the root dirctery
