@@ -18,15 +18,26 @@ async function main(){
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.use(express.urlencoded({extended: true}))
 
 // this is the root dirctery
 app.get("/", (req, res)=>{
     res.send("HII This is the root");
 })
 
-app.get("/Listings", async (req, res)=>{
+// this is the root dirctery
+app.get("/listings", async (req, res)=>{
    const allListings = await Listing.find({});
     res.render("listings/index.ejs", {allListings})
+})
+
+
+// show routes
+app.get("/listings/:id", async (req, res)=>{
+    let { id } = req.params;
+    const listing = await Listing.findById(id);
+    res.render("listings/show.ejs", {listing})
+
 })
 
 // app.get("/testListing", async (req, res)=>{
