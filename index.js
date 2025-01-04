@@ -25,7 +25,7 @@ app.get("/", (req, res)=>{
     res.send("HII This is the root");
 })
 
-// this is the root dirctery
+// this is the root dirctery 
 app.get("/listings", async (req, res)=>{
    const allListings = await Listing.find({});
     res.render("listings/index.ejs", {allListings})
@@ -37,8 +37,13 @@ app.get("/listings/:id", async (req, res)=>{
     let { id } = req.params;
     const listing = await Listing.findById(id);
     res.render("listings/show.ejs", {listing})
-
 })
+
+//new Routes
+// app.get("/listings/new", async (req, res)=>{
+//     let listings = await listings.findById({})
+//     // res.render("/listings/new.ejs", {listings})
+// })
 
 // app.get("/testListing", async (req, res)=>{
 //     let simpleListing = new Listing({
